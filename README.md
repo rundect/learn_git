@@ -40,6 +40,8 @@
 
 `git log --oneline --decorate` - покажет куда указывают указатели веток
 
+`git log --oneline --decorate --graph --all`
+
 `git log --pretty=oneline` - меняет формат вывода
 
 `git log --graph`
