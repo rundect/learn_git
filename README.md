@@ -8,9 +8,17 @@
 
 `git branch` - простой список имеющихся веток
 
+`git branch --all` - List both remote-tracking branches and local branches. Combine with --list to match optional pattern(s)
+
 `git branch <branchname>` - создать новую ветку. В результате создаётся новый указатель на текущий коммит. Как Git определяет, в какой ветке вы находитесь? Он хранит специальный указатель HEAD. HEAD — это указатель на текущую локальную ветку. В нашем случае мы всё ещё находимся в ветке master. Команда git branch только создаёт новую ветку, но не переключает на неё
 
 `git branch -d <branchname>` - Для удаления ветки branchname
+
+`git branch --move bad-branch-name corrected-branch-name` - переименовать ветку локально
+
+`git branch --merged` - посмотреть те ветки, которые вы уже слили с текущей
+
+`git branch --no-merged` - все ветки, содержащие наработки, которые вы пока ещё не слили в текущую ветку
 
 `git branch -v` - посмотреть последний коммит на каждой из веток
 
@@ -62,7 +70,11 @@
 
 `git push origin --delete <tagname>` - убрать тег из внешнего репозитория
 
+`git push origin --delete bad-branch-name` - удалить ветку из внешнего репозитория
+
 `git push <remote> :refs/tags/<tagname>` - обновление внешнего тега пустым значением, что приводит к его удалению
+
+`git push --set-upstream origin corrected-branch-name` - переименовать ветку на удаленном репозитории
 
 `git pull` - извлекает (fetch) данные с сервера, с которого вы изначально клонировали, и автоматически пытается слить (merge) их с кодом, над которым вы в данный момент работаете
 
